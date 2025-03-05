@@ -12,6 +12,13 @@ echo "cd'ng to $PWD/out"
 
 cd out
 
+if [ "$PWD" = "/" ]; then
+  echo "Cant run when out dir is /"
+  exit 2
+fi
+
+sudo rm -rf ./*
+
 echo "Downloading the livecd iso"
 
 curl https://iso.reactos.org/livecd/latest-x86-gcc-lin-rel > reactos_livecd_latest.7z
@@ -24,7 +31,7 @@ mv *livecd*.iso reactos_livecd_latest.iso
 
 echo "Downloading the bootcd iso"
 
-curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel -O > reactos_bootcd_latest.iso
+curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel > reactos_bootcd_latest.iso
 
 echo "Decompressing the bootcd"
 
@@ -32,9 +39,9 @@ echo "Decompressing the bootcd"
 rm -r *.7z
 mv *bootcd*.iso reactos_bootcd_latest.iso
 
-git config --global user.name "irty-auto-ros"
+git config --global user.name "github-actions"
 git config --global user.email "github-actions@github.com"
 git add *.iso
-git commit -m $(printf "Update the ISOs at %s" $(date +"%a %d/%m/%Y"))
+git commit -m "$(printf "Update the ISOs at %s" $(date +"%a %d/%m/%Y"))"
 git push
 
