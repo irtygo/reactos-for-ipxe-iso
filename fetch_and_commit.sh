@@ -38,10 +38,3 @@ echo "Decompressing the bootcd"
 7za x *.7z
 rm -r *.7z
 mv *bootcd*.iso reactos_bootcd_latest.iso
-
-git config --global user.name "github-actions"
-git config --global user.email "github-actions@github.com"
-git add *.iso
-git commit -m "$(printf "Update the ISOs at %s" $(date +"%a %d/%m/%Y"))"
-git push
-
