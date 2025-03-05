@@ -31,7 +31,7 @@ mv *livecd*.iso reactos_livecd_latest.iso
 
 echo "Downloading the bootcd iso"
 
-curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel > reactos_bootcd_latest.iso
+curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel > reactos_bootcd_latest.7z
 
 echo "Decompressing the bootcd"
 
