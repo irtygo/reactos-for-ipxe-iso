@@ -33,11 +33,12 @@ jobs:
       # Get and fetch it  
       - name: Fetch deps and iso
         run: ./fetch_and_commit.sh "https://x-access-token:${{ secrets.GITHUB_TOKEN }}"
-
+      
       - name: Upload ISO to GitHub Releases
-      uses: softprops/action-gh-release@v1
-      with:
-        files: "out/*.iso"  # this grabs all ISOs
-        tag_name: latest
-        token: ${{ secrets.GITHUB_TOKEN }}
-        overwrite: true  # Ensures old ISO files are replaced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "out/*.iso"  # This grabs all ISOs
+          tag_name: latest
+          token: ${{ secrets.GITHUB_TOKEN }}
+          overwrite: true  # Ensures old ISO files are replaced
+
