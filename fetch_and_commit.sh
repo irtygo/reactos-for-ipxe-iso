@@ -14,7 +14,7 @@ cd out
 
 echo "Downloading the livecd iso"
 
-curl https://iso.reactos.org/livecd/latest-x86-gcc-lin-rel -O out/reactos_livecd_latest.7z
+curl https://iso.reactos.org/livecd/latest-x86-gcc-lin-rel > reactos_livecd_latest.7z
 
 echo "Decompressing the livecd"
 
@@ -24,7 +24,7 @@ mv *livecd*.iso reactos_livecd_latest.iso
 
 echo "Downloading the bootcd iso"
 
-curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel -O out/reactos_bootcd_latest.iso
+curl https://iso.reactos.org/bootcd/latest-x86-gcc-lin-rel -O > reactos_bootcd_latest.iso
 
 echo "Decompressing the bootcd"
 
