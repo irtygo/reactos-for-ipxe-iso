@@ -32,4 +32,4 @@ jobs:
     
       # Get and fetch it  
       - name: Fetch and it
-        run: ./fetch_and_commit.sh
+        run: ./fetch_and_commit.sh "https://x-access-token:${{ secrets.GITHUB_TOKEN }}"
